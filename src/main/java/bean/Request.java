@@ -5,7 +5,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * @Autor: bin.liu
- * @Desciption: 请求bean
+ * @Desciption: 封装请求信息
  * @Date: Created in 16:17 2017/9/5
  */
 public class Request {

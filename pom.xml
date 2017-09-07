@@ -5,10 +5,10 @@
   <artifactId>pithy-springframwork</artifactId>
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>demo</module>
-    </modules>
-    <name>pithy-springframwork Maven Webapp</name>
+  <modules>
+    <module>Demo</module>
+  </modules>
+  <name>pithy-springframwork Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -22,7 +22,7 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.0</version>
+      <version>3.1.0</version>
       <scope>provided</scope>
     </dependency>
 
@@ -103,11 +103,28 @@
       <version>1.0.29</version>
     </dependency>
 
-
-
-
   </dependencies>
   <build>
     <finalName>pithy-springframwork</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>assembly</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 </project>

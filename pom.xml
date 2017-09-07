@@ -104,23 +104,33 @@
   <build>
     <finalName>pithy-springframwork</finalName>
     <plugins>
+      <!-- jar打包相关插件 -->
       <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
         <configuration>
-          <appendAssemblyId>false</appendAssemblyId>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
+          <archive>
+            <manifest>
+              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+            </manifest>
+          </archive>
         </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id>
-            <phase>package</phase>
-            <goals>
-              <goal>assembly</goal>
-            </goals>
-          </execution>
-        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.7</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.2</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <showWarnings>true</showWarnings>
+        </configuration>
       </plugin>
     </plugins>
   </build>

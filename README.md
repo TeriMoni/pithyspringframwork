@@ -17,6 +17,6 @@ spring学习之路，模仿mvc模式,写的web应用框架,持续不断更新中
 WEB_002dINF 而不是WEB-INF,在返回视图文件是会出现错误，google了下是由于jar包冲突，暂时未解决
 推荐使用tomcat-server 部署到本地的tomcat，可以正常运行。
 
-<2> 自测试将pom打包方式改问war。新起测试项目，以maven依赖方式导入参考springmvc
+<2> 自测试将pom打包方式改问war。新起测试项目，以maven依赖方式导入参考springmvc,自测试需要有properties配置文件
 
 

@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * @Autor: bin.liu
  * @Desciption: ÒÀÀµ×¢Èë×¢½â
- * @Date: Created in 11:49 2017/9/5
+ * @Date: Created in 11:49 2017/9/8
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

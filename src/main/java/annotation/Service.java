@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * @Autor: bin.liu
- * @Desciption: 服务类注解
+ * @Desciption: service注解
  * @Date: Created in 11:46 2017/9/5
  */
 @Target(ElementType.TYPE)

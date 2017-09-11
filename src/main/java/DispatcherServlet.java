@@ -34,6 +34,7 @@ public class DispatcherServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
+        System.out.println("初始化框架开始");
         //初始化相关helper类
         HelpLoader.init();
         //获取ServerletContext对象
@@ -44,6 +45,8 @@ public class DispatcherServlet extends HttpServlet {
         //注册处理静态资源的servlet
         ServletRegistration defaultServlet = servletContext.getServletRegistration("default");
         defaultServlet.addMapping(ConfigerHelper.getAppResourcePath()+"*");
+        Map<String, ? extends ServletRegistration> servletRegistrations = servletContext.getServletRegistrations();
+        System.out.println("初始化框架成功");
     }
 
     @Override

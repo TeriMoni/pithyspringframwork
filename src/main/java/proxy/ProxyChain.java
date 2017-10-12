@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @Autor: bin.liu
- * @Desciption: ´úÀíÁ´
+ * @Desciption: ä»£ç†é“¾
  * @Date: Created in 11:38 2017/10/12
  */
 public class ProxyChain {

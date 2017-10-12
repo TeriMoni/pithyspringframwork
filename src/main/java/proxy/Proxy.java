@@ -2,13 +2,13 @@ package proxy;
 
 /**
  * @Autor: bin.liu
- * @Desciption: 代理接口
+ * @Desciption: 浠ｇ悊鎺ュ彛
  * @Date: Created in 11:58 2017/10/12
  */
 public interface Proxy {
 
     /**
-     *  执行链式代理
+     *  鎵ц閾惧紡浠ｇ悊
      * @param ProxyChain
      * @return
      * @throws Throwable

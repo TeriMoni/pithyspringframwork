@@ -13,7 +13,7 @@ import java.util.List;
  * @Date: Created in 10:32 2017/10/13
  */
 public class ProxyManager {
-
+    @SuppressWarnings("unchecked")
     public static <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList){
         return (T) Enhancer.create(targetClass, new MethodInterceptor() {
             @Override

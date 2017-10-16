@@ -13,8 +13,21 @@ import java.util.List;
  * @Date: Created in 10:32 2017/10/13
  */
 public class ProxyManager {
+
+    private static ProxyManager instance = null;
+
+    public ProxyManager() {
+    }
+
+    public static ProxyManager getInstance(){
+        if(instance == null){
+            instance = new ProxyManager();
+        }
+        return instance;
+    }
+
     @SuppressWarnings("unchecked")
-    public static <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList){
+    public <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList){
         return (T) Enhancer.create(targetClass, new MethodInterceptor() {
             @Override
             public Object intercept(Object targetObject, Method targetMethod, Object[] methodParams, MethodProxy methodProxy) throws Throwable {

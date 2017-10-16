@@ -49,11 +49,15 @@ public class ProxyChain {
     }
 
     public Object doProxyChain() throws Throwable {
-        Object methodResult;
+        Object methodResult = null;
         if(proxyIndex < proxyList.size()){
             methodResult = proxyList.get(proxyIndex++).doProxy(this);
         }else {
-            methodResult = methodProxy.invoke(targetObject,methodParams);
+            try {
+                methodResult = methodProxy.invokeSuper(targetObject,methodParams);
+            }catch (Throwable throwable){
+                throw new RuntimeException(throwable);
+            }
         }
         return methodResult;
     }

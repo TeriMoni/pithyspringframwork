@@ -4,6 +4,7 @@ import annotation.Controller;
 import annotation.Service;
 import utils.ClassUtil;
 
+import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 public class ClassHelper {
 
     /**
-     * 用于存放所有加载类的集合S
+     * 用于存放所有加载类的集合
      */
     private  static final Set<Class<?>> CLASS_SET;
 
@@ -68,6 +69,36 @@ public class ClassHelper {
         Set<Class<?>> classSet = new HashSet<Class<?>>();
         classSet.addAll(getControllerClassSet());
         classSet.addAll(getServiceClassSet());
-        return  classSet;
+        return classSet;
+    }
+
+    /**
+     * 获取应用包名下某父类(接口)的所有子类(实现类)
+     * @param superClass
+     * @return
+     */
+    public static Set<Class<?>> getClassSetBySuper(Class<?> superClass){
+        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        for (Class<?> cls:classSet) {
+            if(superClass.isAssignableFrom(cls)&&!superClass.equals(cls)){
+                classSet.add(cls);
+            }
+        }
+        return classSet;
+    }
+
+    /**
+     * 获取应用包名下带有某注解的所有类
+     * @param annotationClass
+     * @return
+     */
+    public static Set<Class<?>> getClassSetByAnnotation(Class<? extends Annotation> annotationClass){
+        Set<Class<?>> classSet = new HashSet<Class<?>>();
+        for (Class<?> cls:classSet) {
+            if(cls.isAnnotationPresent(annotationClass)){
+                classSet.add(cls);
+            }
+        }
+        return classSet;
     }
 }

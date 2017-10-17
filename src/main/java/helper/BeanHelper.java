@@ -35,6 +35,15 @@ public class BeanHelper {
     }
 
     /**
+     * 设置bean实例
+     * @param cls
+     * @param object
+     */
+    public static void setBenMap(Class<?> cls, Object object) {
+        BEN_MAP.put(cls,object);
+    }
+
+    /**
      * 根据类获取bean实例
      * @param cls
      * @param <T>

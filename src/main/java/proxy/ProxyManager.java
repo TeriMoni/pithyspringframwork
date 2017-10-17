@@ -27,7 +27,7 @@ public class ProxyManager {
     }
 
     @SuppressWarnings("unchecked")
-    public <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList){
+    public static <T> T createProxy(final Class<?> targetClass, final List<Proxy> proxyList){
         return (T) Enhancer.create(targetClass, new MethodInterceptor() {
             @Override
             public Object intercept(Object targetObject, Method targetMethod, Object[] methodParams, MethodProxy methodProxy) throws Throwable {
